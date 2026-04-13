@@ -4,7 +4,7 @@ require('dotenv').config()
 
 const express = require('express')
 
-const { makeConnection } = require('./src/infra/database/connection')
+const { makeConnection } = require('./src/infra/mysql/connection')
 const { makeUserRepository } = require('./src/adapters/out/user.repository')
 const { makeTokenService } = require('./src/adapters/out/jwt.adapter')
 const { makePasswordService } = require('./src/adapters/out/bcrypt.adapter')
