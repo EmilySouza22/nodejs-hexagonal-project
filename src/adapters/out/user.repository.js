@@ -11,10 +11,10 @@ const makeUserRepository = (connection) => ({
 
   save: async (user) => {
     const [result] = await connection.execute(
-      'INSERT INTO users (email, password) VALUES (?, ?)',
-      [user.email, user.password]
+      'INSERT INTO users (name, email, password) VALUES (?, ?, ?)',
+      [user.name, user.email, user.password]
     )
-    return { id: result.insertId, email: user.email }
+    return { id: result.insertId, name: user.name, email: user.email }
   },
 })
 
