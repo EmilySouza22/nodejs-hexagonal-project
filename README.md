@@ -12,16 +12,11 @@ A proposta é evidenciar como as regras de negócio podem permanecer desacoplada
 
 Além disso, o projeto foi desenvolvido com finalidade acadêmica, como parte de um estudo sobre padrões arquiteturais, sendo apresentado em sala de aula para consolidar o entendimento sobre separação de responsabilidades e boas práticas de desenvolvimento.
 
----
 
+<p align="center">
+  <img src="./assets/diagram.png" alt="Diagrama da Arquitetura Hexagonal" width="700"/>
+</p>
 
-## 🛠️ Funcionalidades
-
-- Estrutura baseada em camadas bem definidas
-- Implementação de casos de uso (Use Cases)
-- Interfaces (Ports) para comunicação entre camadas
-- Adaptadores para banco de dados e serviços externos
-- Organização modular e escalável
 
 ---
 
@@ -32,7 +27,7 @@ database/
 └── schema.sql
 
 src/
-├── adapters/
+├── adapters/                
 │   ├── in/                  # Entrada (controllers / DTOs)
 │   │   ├── dtos/
 │   │   │   └── login.dto.js
@@ -45,36 +40,40 @@ src/
 │
 ├── domain/
 │   └── user/
-│       ├── user.entity.js
-│       └── user.use-cases.js
+│       ├── user.entity.js  # Entidade → representa o usuário (modelo do sistema
+│       └── user.use-cases.js # Regras de negócio (cadastro, login, validações)
 │
 ├── infra/
-│   └── database/
-│       └── connection.js
+│   └── mysql/
+│       └── connection.js # Conexão com mysql
 │
 ├── ports/
 │   ├── in/
 │   │   └── http/
-│   │       └── auth.router.js
+│   │       └── auth.router.js  # Rotas da API (/login, /usuarios)
 │   │
 │   └── out/
-│       └── user.repository.port.js
+│       └── user.repository.port.js # Interface (contrato) do repositório
 │
 app.js
 ```
 ---
 
+## 🛠️ Funcionalidades
 
-## 🧱 Diagrama da Arquitetura
+- Estrutura baseada em camadas bem definidas
+- Implementação de casos de uso (Use Cases)
+- Interfaces (Ports) para comunicação entre camadas
+- Adaptadores para banco de dados e serviços externos
+- Organização modular e escalável
 
-[![Diagrama](https://img.shields.io/badge/Diagrama-Figma-8A2BE2?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/design/ZZDfGu5Q4ifXq3H2IMUaQd/Sem-t%C3%ADtulo?node-id=0-1&p=f&t=fZwRMX81gz0FtGrz-0)
-[![Apresentação: Canva](https://img.shields.io/badge/Apresentação-Canva-6F42C1?style=for-the-badge&logo=canva&logoColor=white&labelColor=555555&color=6F42C1)]()
+---
 
 
-<p align="center">
-  <img src="./assets/diagram.png" alt="Diagrama da Arquitetura Hexagonal" width="700"/>
-</p>
+## 💻 Recursos do Projeto
 
+[![Diagrama](https://img.shields.io/badge/Diagrama-Figma-28a745?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/design/ZZDfGu5Q4ifXq3H2IMUaQd/Sem-t%C3%ADtulo?node-id=0-1&p=f&t=fZwRMX81gz0FtGrz-0)
+[![Apresentação](https://img.shields.io/badge/Apresentação-Canva-28a745?style=for-the-badge&logo=canva&logoColor=white)](https://canva.link/u4009gz1bu452yg)
 
 
 Grupo:
