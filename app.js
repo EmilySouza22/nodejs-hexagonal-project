@@ -1,16 +1,21 @@
-//TO DO: dependencias, express
-
 require('dotenv').config()
 
 const express = require('express')
 
-const { makeConnection } = require('./src/infra/mysql/connection')
+//in
+const { makeAuthController } = require('./src/adapters/in/auth.controller')
+const { makeAuthRouter } = require('./src/ports/in/http/auth.router')
+
+//core
+const { loginUseCase, registerUseCase } = require('./src/domain/user/user.use-case')
+
+//out
 const { makeUserRepository } = require('./src/adapters/out/user.repository')
 const { makeTokenService } = require('./src/adapters/out/jwt.adapter')
 const { makePasswordService } = require('./src/adapters/out/bcrypt.adapter')
-const { loginUseCase, registerUseCase } = require('./src/domain/user/user.use-case')
-const { makeAuthController } = require('./src/adapters/in/auth.controller')
-const { makeAuthRouter } = require('./src/ports/in/http/auth.router')
+
+//infra
+const { makeConnection } = require('./src/infra/mysql/connection')
 
 const app = express()
 app.use(express.json())
@@ -22,6 +27,7 @@ const passwordService = makePasswordService()
 
 const login = loginUseCase(userRepository, tokenService, passwordService)
 const register = registerUseCase(userRepository, tokenService, passwordService)
+
 const authController = makeAuthController(login, register)
 const authRouter = makeAuthRouter(authController)
 

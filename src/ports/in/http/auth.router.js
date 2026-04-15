@@ -1,5 +1,3 @@
-//TO DO: Express routes
-
 const { Router } = require('express')
 
 const makeAuthRouter = (authController) => {

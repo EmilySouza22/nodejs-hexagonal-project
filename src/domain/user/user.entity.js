@@ -1,7 +1,3 @@
-// TO DO: Entitie User
-
-//entidade pura, sem deps externas
-
 class User {
   constructor({ id, email, password }) {
     this.id = id
