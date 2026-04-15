@@ -14,7 +14,7 @@ Além disso, o projeto foi desenvolvido com finalidade acadêmica, como parte de
 
 
 <p align="center">
-  <img src="./assets/diagram.png" alt="Diagrama da Arquitetura Hexagonal" width="700"/>
+  <img src="./assets/diagram3.png" alt="Diagrama da Arquitetura Hexagonal" width="700"/>
 </p>
 
 
