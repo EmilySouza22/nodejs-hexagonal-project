@@ -1,6 +1,6 @@
 # ⬢ nodejs-hexagonal-project
 
-> 🧩 Projeto desenvolvido para estudo da **Arquitetura Hexagonal (Ports & Adapters)** utilizando Node.js.
+🧩 Projeto desenvolvido para estudo da **Arquitetura Hexagonal (Ports & Adapters)** utilizando Node.js.
 
 ---
 
